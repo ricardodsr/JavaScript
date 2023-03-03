@@ -108,7 +108,7 @@ null === undefined; // = false
 // There's also `null` and `undefined`.
 null;      // used to indicate a deliberate non-value
 undefined; // used to indicate a value is not currently present (although
-           // `undefined` is actually a value itself)
+// `undefined` is actually a value itself)
 
 // false, null, undefined, NaN, 0 and "" are falsy; everything else is truthy.
 // Note that 0 is falsy and "0" is truthy, even though 0 == "0".
@@ -163,24 +163,24 @@ myArray.push(3); // Add as the last element
 someVar = myArray.pop(); // Remove last element and return it
 
 // Join all elements of an array with semicolon
-var myArray0 = [32,false,"js",12,56,90];
+var myArray0 = [32, false, "js", 12, 56, 90];
 myArray0.join(";"); // = "32;false;js;12;56;90"
 
 // Get subarray of elements from index 1 (include) to 4 (exclude)
-myArray0.slice(1,4); // = [false,"js",12]
+myArray0.slice(1, 4); // = [false,"js",12]
 
 // Remove 4 elements starting from index 2, and insert there strings
 // "hi","wr" and "ld"; return removed subarray
-myArray0.splice(2,4,"hi","wr","ld"); // = ["js",12,56,90]
+myArray0.splice(2, 4, "hi", "wr", "ld"); // = ["js",12,56,90]
 // myArray0 === [32,false,"hi","wr","ld"]
 
 // JavaScript's objects are equivalent to "dictionaries" or "maps" in other
 // languages: an unordered collection of key-value pairs.
-var myObj = {key1: "Hello", key2: "World"};
+var myObj = { key1: "Hello", key2: "World" };
 
 // Keys are strings, but quotes aren't required if they're a valid
 // JavaScript identifier. Values can be any type.
-var myObj = {myKey: "myValue", "my other key": 4};
+var myObj = { myKey: "myValue", "my other key": 4 };
 
 // Object attributes can also be accessed using the subscript syntax,
 myObj["my other key"]; // = 4
@@ -199,16 +199,16 @@ myObj.myFourthKey; // = undefined
 
 // The `if` structure works as you'd expect.
 var count = 1;
-if (count == 3){
+if (count == 3) {
     // evaluated if count is 3
-} else if (count == 4){
+} else if (count == 4) {
     // evaluated if count is 4
 } else {
     // evaluated if it's not either 3 or 4
 }
 
 // As does `while`.
-while (true){
+while (true) {
     // An infinite loop!
 }
 
@@ -220,7 +220,7 @@ do {
 
 // The `for` loop is the same as C and Java:
 // initialization; continue condition; iteration.
-for (var i = 0; i < 5; i++){
+for (var i = 0; i < 5; i++) {
     // will run 5 times
 }
 
@@ -228,7 +228,7 @@ for (var i = 0; i < 5; i++){
 outer:
 for (var i = 0; i < 10; i++) {
     for (var j = 0; j < 10; j++) {
-        if (i == 5 && j ==5) {
+        if (i == 5 && j == 5) {
             break outer;
             // breaks out of outer loop instead of only the inner one
         }
@@ -237,8 +237,8 @@ for (var i = 0; i < 10; i++) {
 
 // The for/in statement allows iteration over properties of an object.
 var description = "";
-var person = {fname:"Paul", lname:"Ken", age:18};
-for (var x in person){
+var person = { fname: "Paul", lname: "Ken", age: 18 };
+for (var x in person) {
     description += person[x] + " ";
 } // description = 'Paul Ken 18 '
 
@@ -247,15 +247,15 @@ for (var x in person){
 // and user-defined iterables).
 var myPets = "";
 var pets = ["cat", "dog", "hamster", "hedgehog"];
-for (var pet of pets){
+for (var pet of pets) {
     myPets += pet + " ";
 } // myPets = 'cat dog hamster hedgehog '
 
 // && is logical and, || is logical or
-if (house.size == "big" && house.colour == "blue"){
+if (house.size == "big" && house.colour == "blue") {
     house.contains = "bear";
 }
-if (colour == "red" || colour == "blue"){
+if (colour == "red" || colour == "blue") {
     // colour is either red or blue
 }
 
@@ -267,18 +267,18 @@ var name = otherName || "default";
 // or the cases after the correct one will be executed too.
 grade = 'B';
 switch (grade) {
-  case 'A':
-    console.log("Great job");
-    break;
-  case 'B':
-    console.log("OK job");
-    break;
-  case 'C':
-    console.log("You can do better");
-    break;
-  default:
-    console.log("Oy vey");
-    break;
+    case 'A':
+        console.log("Great job");
+        break;
+    case 'B':
+        console.log("OK job");
+        break;
+    case 'C':
+        console.log("You can do better");
+        break;
+    default:
+        console.log("Oy vey");
+        break;
 }
 
 
@@ -286,7 +286,7 @@ switch (grade) {
 // 4. Functions, Scope and Closures
 
 // JavaScript functions are declared with the `function` keyword.
-function myFunction(thing){
+function myFunction(thing) {
     return thing.toUpperCase();
 }
 myFunction("foo"); // = "FOO"
@@ -294,16 +294,16 @@ myFunction("foo"); // = "FOO"
 // Note that the value to be returned must start on the same line as the
 // `return` keyword, otherwise you'll always return `undefined` due to
 // automatic semicolon insertion. Watch out for this when using Allman style.
-function myFunction(){
+function myFunction() {
     return // <- semicolon automatically inserted here
-    {thisIsAn: 'object literal'};
+    { thisIsAn: 'object literal' };
 }
 myFunction(); // = undefined
 
 // JavaScript functions are first class objects, so they can be reassigned to
 // different variable names and passed to other functions as arguments - for
 // example, when supplying an event handler:
-function myFunction(){
+function myFunction() {
     // this code will be called in 5 seconds' time
 }
 setTimeout(myFunction, 5000);
@@ -311,20 +311,20 @@ setTimeout(myFunction, 5000);
 // and Node.js.
 
 // Another function provided by browsers is setInterval
-function myFunction(){
+function myFunction() {
     // this code will be called every 5 seconds
 }
 setInterval(myFunction, 5000);
 
 // Function objects don't even have to be declared with a name - you can write
 // an anonymous function definition directly into the arguments of another.
-setTimeout(function(){
+setTimeout(function () {
     // this code will be called in 5 seconds' time
 }, 5000);
 
 // JavaScript has function scope; functions get their own scope but other blocks
 // do not.
-if (true){
+if (true) {
     var i = 5;
 }
 i; // = 5 - not undefined as you'd expect in a block-scoped language
@@ -332,7 +332,7 @@ i; // = 5 - not undefined as you'd expect in a block-scoped language
 // This has led to a common pattern of "immediately-executing anonymous
 // functions", which prevent temporary variables from leaking into the global
 // scope.
-(function(){
+(function () {
     var temporary = 5;
     // We can access the global scope by assigning to the "global object", which
     // in a web browser is always `window`. The global object may have a
@@ -345,11 +345,11 @@ permanent; // = 10
 // One of JavaScript's most powerful features is closures. If a function is
 // defined inside another function, the inner function has access to all the
 // outer function's variables, even after the outer function exits.
-function sayHelloInFiveSeconds(name){
+function sayHelloInFiveSeconds(name) {
     var prompt = "Hello, " + name + "!";
     // Inner functions are put in the local scope by default, as if they were
     // declared with `var`.
-    function inner(){
+    function inner() {
         alert(prompt);
     }
     setTimeout(inner, 5000);
@@ -365,7 +365,7 @@ sayHelloInFiveSeconds("Adam"); // will open a popup with "Hello, Adam!" in 5s
 
 // Objects can contain functions.
 var myObj = {
-    myFunc: function(){
+    myFunc: function () {
         return "Hello world!";
     }
 };
@@ -375,7 +375,7 @@ myObj.myFunc(); // = "Hello world!"
 // they're attached to using the `this` keyword.
 myObj = {
     myString: "Hello world!",
-    myFunc: function(){
+    myFunc: function () {
         return this.myString;
     }
 };
@@ -389,7 +389,7 @@ myFunc(); // = undefined
 
 // Inversely, a function can be assigned to the object and gain access to it
 // through `this`, even if it wasn't attached when it was defined.
-var myOtherFunc = function(){
+var myOtherFunc = function () {
     return this.myString.toUpperCase();
 };
 myObj.myOtherFunc = myOtherFunc;
@@ -398,7 +398,7 @@ myObj.myOtherFunc(); // = "HELLO WORLD!"
 // We can also specify a context for a function to execute in when we invoke it
 // using `call` or `apply`.
 
-var anotherFunc = function(s){
+var anotherFunc = function (s) {
     return this.myString + s;
 };
 anotherFunc.call(myObj, " And Hello Moon!"); // = "Hello World! And Hello Moon!"
@@ -423,7 +423,7 @@ boundFunc(" And Hello Saturn!"); // = "Hello World! And Hello Saturn!"
 
 // `bind` can also be used to partially apply (curry) a function.
 
-var product = function(a, b){ return a * b; };
+var product = function (a, b) { return a * b; };
 var doubler = product.bind(this, 2);
 doubler(8); // = 16
 
@@ -431,7 +431,7 @@ doubler(8); // = 16
 // made available to the function via the `this` keyword. Functions designed to be
 // called like that are called constructors.
 
-var MyConstructor = function(){
+var MyConstructor = function () {
     this.myNumber = 5;
 };
 myNewObj = new MyConstructor(); // = {myNumber: 5}
@@ -453,7 +453,7 @@ var myObj = {
 };
 var myPrototype = {
     meaningOfLife: 42,
-    myFunc: function(){
+    myFunc: function () {
         return this.myString.toLowerCase();
     }
 };
@@ -479,7 +479,7 @@ myObj.meaningOfLife; // = 43
 
 // The for/in statement allows iteration over properties of an object,
 // walking up the prototype chain until it sees a null prototype.
-for (var x in myObj){
+for (var x in myObj) {
     console.log(myObj[x]);
 }
 ///prints:
@@ -490,8 +490,8 @@ for (var x in myObj){
 
 // To only consider properties attached to the object itself
 // and not its prototypes, use the `hasOwnProperty()` check.
-for (var x in myObj){
-    if (myObj.hasOwnProperty(x)){
+for (var x in myObj) {
+    if (myObj.hasOwnProperty(x)) {
         console.log(myObj[x]);
     }
 }
@@ -513,7 +513,7 @@ myObj.meaningOfLife; // = 43
 // are given when they're created with that constructor and the new keyword.
 MyConstructor.prototype = {
     myNumber: 5,
-    getMyNumber: function(){
+    getMyNumber: function () {
         return this.myNumber;
     }
 };
@@ -532,17 +532,17 @@ myNumber == myNumberObj; // = true
 typeof myNumber; // = 'number'
 typeof myNumberObj; // = 'object'
 myNumber === myNumberObj; // = false
-if (0){
+if (0) {
     // This code won't execute, because 0 is falsy.
 }
-if (new Number(0)){
-   // This code will execute, because wrapped numbers are objects, and objects
-   // are always truthy.
+if (new Number(0)) {
+    // This code will execute, because wrapped numbers are objects, and objects
+    // are always truthy.
 }
 
 // However, the wrapper objects and the regular builtins share a prototype, so
 // you can actually add functionality to a string, for instance.
-String.prototype.firstCharacter = function(){
+String.prototype.firstCharacter = function () {
     return this.charAt(0);
 };
 "abc".firstCharacter(); // = "a"
@@ -553,10 +553,10 @@ String.prototype.firstCharacter = function(){
 
 // For instance, we mentioned that Object.create isn't yet available in all
 // implementations, but we can still use it with this polyfill:
-if (Object.create === undefined){ // don't overwrite it if it exists
-    Object.create = function(proto){
+if (Object.create === undefined) { // don't overwrite it if it exists
+    Object.create = function (proto) {
         // make a temporary constructor with the right prototype
-        var Constructor = function(){};
+        var Constructor = function () { };
         Constructor.prototype = proto;
         // then use it to create a new, appropriately-prototyped object
         return new Constructor();

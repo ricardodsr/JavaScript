@@ -11,5 +11,7 @@ function validateEmail(email_id) {
     }
 }
 
+//valid
 validateEmail('abc123@gmail.com');
+// not valid
 validateEmail('hello@com');
